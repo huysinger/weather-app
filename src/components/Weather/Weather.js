@@ -2,9 +2,11 @@ import React from "react";
 import moment from "moment/moment";
 
 const Weather = ({ weatherData }) => (
-  <div>
-    <h1 className="header">{weatherData.name}</h1>
-    <p>Temprature: {weatherData.main.temp}&deg;C</p>
+  <div className="text-center bg-blue-200 p-10 rounded-xl">
+    <h1 className="text-2xl font-bold">{weatherData.name}</h1>
+    <p className="text-xl text-gray-500">
+      {Math.ceil(weatherData.main.temp - 273.15)}&deg;C
+    </p>
     <p>
       Sunrise:{" "}
       {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString("en-IN")}
